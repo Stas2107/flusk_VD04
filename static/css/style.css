@@ -1,0 +1,42 @@
+.card {
+   width: 400px;
+   height: 650px;
+   background-color: burlywood;
+   border-radius: 60px;
+   position: relative; /* Это нужно, чтобы .photo интерпретировался как контейнер для img */
+   /* Стили для размещения .card в горизонтальном порядке будут применены через свойства flexbox выше. */
+   margin: 10px; /* Например, отступ вокруг каждой карточки */
+}
+
+.photo {
+   height: 40%;
+   padding: 20px;
+   /* Для того, чтобы высота .photo включала в себя padding,
+   вы можете использовать box-sizing: border-box; */
+   box-sizing: border-box;
+   transition: height 0.5s ease; /* Добавляем плавную анимацию изменения размера */
+}
+
+.photo:hover {
+   height: 50%; /* Увеличиваем высоту .photo до 50% при наведении */
+}
+
+.info {
+   padding: 20px;
+   height: 40%;
+}
+
+img {
+   width: 100%; /* Установить ширину изображения на 100% от ширины контейнера */
+   height: 100%; /* Установить высоту изображения на 100% от высоты контейнера */
+   object-fit: cover; /* Это сохранит пропорции изображения, не допуская его растяжения */
+   border-radius: 20px;
+}
+
+body {
+   display: flex;
+   flex-direction: row;  /* Горизонтальное выравнивание */
+   flex-wrap: wrap;      /* Элементы будут переноситься на следующую строку, если не помещаются */
+   justify-content: space-around; /* Равномерное расстояние между элементами */
+   align-items: flex-start; /* Выравнивание элементов по верхнему краю */
+}
